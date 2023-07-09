@@ -12,10 +12,10 @@ public class CryptographyExpert extends Programmers{
 		this.levelExpSecurity = levelExpSecurity;
 		this.obsSkillLevel = obsSkillLevel;
 		this.numSucces = numSucces;
-		if ((levelProgrammer(knowCryptAlg)+levelProgrammer(levelExpSecurity)+levelProgrammer(obsSkillLevel))>999) {
+		if ((levelProgrammer(knowCryptAlg)+levelProgrammer(obsSkillLevel))>999) {
 			this.levelExp = 999;
 		} else {
-			this.levelExp = levelProgrammer(knowCryptAlg)+levelProgrammer(levelExpSecurity)+levelProgrammer(obsSkillLevel);
+			this.levelExp = levelProgrammer(knowCryptAlg)+levelProgrammer(obsSkillLevel);
 		}
 	}
 	public String getKnowCryptAlg() {

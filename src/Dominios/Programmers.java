@@ -5,7 +5,6 @@ public abstract class Programmers {
 	protected String idProgrammers,name,lastname,specialty;
 
 	public Programmers(String idProgrammers, String name, String lastname, String specialty) {
-		super();
 		this.idProgrammers = idProgrammers;
 		this.name = name;
 		this.lastname = lastname;
