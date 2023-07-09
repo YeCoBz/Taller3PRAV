@@ -26,7 +26,7 @@ public class Artillery extends Soldiers{
 	public void setPrecision(int precision) {
 		this.precision = precision;
 	}
-	
+
 	
 
 }
