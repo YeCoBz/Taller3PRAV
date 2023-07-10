@@ -1,7 +1,12 @@
 package Logic;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -21,7 +26,7 @@ import GraphicInterface.Login;
 
 public class App {
 
-	public static void main(String[] args) throws FileNotFoundException {
+	public static void main(String[] args) throws IOException {
 		
 		Container container = new Container();
 		Scanner scan = null;
@@ -34,6 +39,7 @@ public class App {
 		
 
 		presentWindow(container);
+				
 	}
 
 	private static void presentWindow(Container container) {
@@ -251,5 +257,25 @@ public class App {
 		}	
 		
 	}
+	
+	
+	/**
+	 * 	public static void guardarDebilidades(String nombreArchivo,int filas,contenedorDebilidades contenedorDebilidades ) throws IOException {
+		FileWriter escribir;
+		PrintWriter linea;
+		File archivo = new File(nombreArchivo);
+		
+		escribir = new FileWriter(archivo,true);
+		linea = new PrintWriter(escribir);
+		BufferedWriter bw = new BufferedWriter(new FileWriter(archivo));
+		bw.write("");
+		for(int i=0;i<filas;i++) {
+			linea.println(contenedorDebilidades.devolverDebilidad(i)+", "+contenedorDebilidades.getNivelDebilidad(i));
+		}
 
+		linea.close();
+		escribir.close();
+		bw.close();
+	}
+	 */
 }

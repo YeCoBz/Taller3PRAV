@@ -14,6 +14,13 @@ import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Iterator;
+import java.util.List;
 import java.awt.event.ActionEvent;
 
 public class RegisterNewUser extends JFrame {
@@ -92,9 +99,18 @@ public class RegisterNewUser extends JFrame {
 				Users user = new Users(name,password,country,type);
 				container.getUserList().add(user);
 				
+				try {
+					container.savedUsersTxt();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 				JOptionPane.showMessageDialog(null, "Usuario registrado","BIENVENIDO",JOptionPane.INFORMATION_MESSAGE);
 				dispose();
 			}
+
+			
 		});
 		registerUser.setBounds(272, 91, 89, 23);
 		contentPane.add(registerUser);

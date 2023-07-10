@@ -1,4 +1,9 @@
 package Logic;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.*;
 
 import Dominios.AI;
@@ -111,6 +116,28 @@ public class Container implements ContainerInterface{
 		return ProgrammersList.get(i).toString();
 	}
 	
-	
+	public void savedUsersTxt() throws IOException {
+		Iterator<Users> it = UserList.iterator();
+		FileWriter escribir;
+		PrintWriter linea;
+		File archivo = new File("users.txt");
+		
+		escribir = new FileWriter(archivo,true);
+		linea = new PrintWriter(escribir);
+		BufferedWriter bw = new BufferedWriter(new FileWriter(archivo));
+		bw.write("");
+		
+		
+		while (it.hasNext()) {
+			
+			Users user = (Users) it.next();
+			
+			linea.println(user.getUserName()+","+user.getPassword()+","+user.getCountry()+","+user.getTypeUser());
+		}
+		
+		linea.close();
+		escribir.close();
+		bw.close();
+	}
 
 }

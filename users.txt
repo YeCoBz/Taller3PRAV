@@ -8,3 +8,4 @@ robert_miller, 12345678, España, jugador
 emily.wilson, passw0rd!, Italia, jugador
 chris1987, mysecretpass, Brasil, jugador
 anna_smith, qwerty123, México, admin
+cristian,cris123,chile,jugador

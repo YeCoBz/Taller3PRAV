@@ -24,7 +24,6 @@ public class VentanaOperaciones extends JFrame implements ActionListener{
 	/**
 	 * Launch the application.
 	 */
-	
 
 	/**
 	 * Create the frame.
@@ -81,6 +80,12 @@ public class VentanaOperaciones extends JFrame implements ActionListener{
 		btnSignUp.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnSignUp.setBounds(311, 266, 87, 21);
 		contentPane.add(btnSignUp);
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
 	}
 
 	
