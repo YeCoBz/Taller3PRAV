@@ -35,6 +35,13 @@ public class SpecialOperations extends Soldiers {
 	public void setResoObtained(int resoObtained) {
 		this.resoObtained = resoObtained;
 	}
+
+	@Override
+	public String toString() {
+		return "SpecialOperations [succCovMissions=" + succCovMissions + ", totalMissions=" + totalMissions
+				+ ", resoObtained=" + resoObtained + ", id=" + id + ", name=" + name + ", lastname=" + lastname
+				+ ", nickname=" + nickname + ", specialty=" + specialty + "]";
+	}
 	
 	
 

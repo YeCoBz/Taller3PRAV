@@ -25,6 +25,12 @@ public class Infantry extends Soldiers{
 	public void setFavoriteWapon(String favoriteWapon) {
 		this.favoriteWapon = favoriteWapon;
 	}
+	@Override
+	public String toString() {
+		return "Infantry [missionsCompleted=" + missionsCompleted + ", favoriteWapon=" + favoriteWapon + ", id=" + id
+				+ ", name=" + name + ", lastname=" + lastname + ", nickname=" + nickname + ", specialty=" + specialty
+				+ "]";
+	}
 	
 	
 

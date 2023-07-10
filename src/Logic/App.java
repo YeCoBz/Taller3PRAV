@@ -40,6 +40,7 @@ public class App {
 		
 		Login LoginWindows = new Login(container);
 		LoginWindows.setVisible(true);
+		LoginWindows.setLocationRelativeTo(null);
 		
 	}
 

@@ -26,6 +26,13 @@ public class CombatIntelligence extends Soldiers{
 	public void setIdenEnemies(int idenEnemies) {
 		this.idenEnemies = idenEnemies;
 	}
+
+	@Override
+	public String toString() {
+		return "CombatIntelligence [intReports=" + intReports + ", idenEnemies=" + idenEnemies + ", id=" + id
+				+ ", name=" + name + ", lastname=" + lastname + ", nickname=" + nickname + ", specialty=" + specialty
+				+ "]";
+	}
 	
 	
 }

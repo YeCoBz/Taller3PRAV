@@ -71,17 +71,44 @@ public class Container implements ContainerInterface{
 		
 		Iterator<Users> it = UserList.iterator();
 		
+		int encontrado = 0;
+		
 		while (it.hasNext()) {
 			
 			Users user = (Users) it.next();
 			
 			if (user.getUserName().equals(username) && user.getPassword().equals(password)) {
 				
-				return true;
+				encontrado = 1;
 			}
 		}
-		return false;
+		if (encontrado == 1) return true;
+		else return false;
 		
+	}
+
+	@Override
+	public String showSoldiers(int i) {
+		
+		return SoldierList.get(i).toString();
+	}
+
+	@Override
+	public int returnSizeArraySoldiers(ArrayList<Soldiers> soldiers) {
+		
+		return SoldierList.size();
+	}
+
+	@Override
+	public int returnSizeArrayProgrammers(ArrayList<Programmers> soldiers) {
+	
+		return ProgrammersList.size();
+	}
+
+	@Override
+	public String showProgrammers(int i) {
+		
+		return ProgrammersList.get(i).toString();
 	}
 	
 	

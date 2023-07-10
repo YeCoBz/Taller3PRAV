@@ -63,7 +63,4 @@ public abstract class Soldiers {
 		this.courageSouldier = courageSouldier;
 	}
 	
-	
-
-
 }

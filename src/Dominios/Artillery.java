@@ -27,6 +27,12 @@ public class Artillery extends Soldiers{
 		this.precision = precision;
 	}
 
+	@Override
+	public String toString() {
+		return "Artillery [targetsDestroyed=" + targetsDestroyed + ", precision=" + precision + ", id=" + id + ", name="
+				+ name + ", lastname=" + lastname + ", nickname=" + nickname + ", specialty=" + specialty + "]";
+	}
+
 	
 
 }

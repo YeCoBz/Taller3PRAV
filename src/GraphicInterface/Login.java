@@ -65,16 +65,38 @@ public class Login extends JFrame {
 				
 				char[] clave = jpassClave.getPassword();
 				String password = new String(clave);
+				System.out.println(password);
 				String userName = txtUsername.getText();
 				
 				if (container.searchByUserName(userName,password)) {
 					
+					dispose();
 					JOptionPane.showMessageDialog(null, userName);
+					Principal p = new Principal();
+					p.setVisible(true);
+					p.setLocationRelativeTo(null);
 					
-				} else JOptionPane.showMessageDialog(null, "no existe");
+				} else {
+					JOptionPane.showMessageDialog(null, "Usuario no encontrado","ERROR",JOptionPane.INFORMATION_MESSAGE);
+					jpassClave.setText(""); txtUsername.setText("");
+					txtUsername.requestFocus();
+				}
 			}
 		});
 		Ingresar.setBounds(246, 64, 89, 23);
 		contentPane.add(Ingresar);
+		
+		JButton register = new JButton("Registrar");
+		register.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				RegisterNewUser re = new RegisterNewUser(container);
+				re.setVisible(true);
+				re.setLocationRelativeTo(null);
+			}
+		});
+		register.setBounds(335, 227, 89, 23);
+		contentPane.add(register);
 	}
+	
+
 }
