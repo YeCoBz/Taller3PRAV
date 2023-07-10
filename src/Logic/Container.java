@@ -55,6 +55,14 @@ public class Container {
 	public void setSoldierList(List<Soldiers> soldierList) {
 		SoldierList = soldierList;
 	}
+
+	public List<StatsCountry> getStatsCountryList() {
+		return StatsCountryList;
+	}
+
+	public void setStatsCountryList(List<StatsCountry> statsCountryList) {
+		StatsCountryList = statsCountryList;
+	}
 	
 	
 

@@ -2,6 +2,7 @@ package Logic;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.List;
 import java.util.Scanner;
 
 import Dominios.AI;
@@ -13,8 +14,10 @@ import Dominios.LogisticalSupport;
 import Dominios.Programmers;
 import Dominios.Soldiers;
 import Dominios.SpecialOperations;
+import Dominios.StatsCountry;
 import Dominios.ThreatAnalyst;
 import Dominios.Users;
+import gui.VentanaOperaciones;
 
 public class App {
 
@@ -30,10 +33,18 @@ public class App {
 		readSaveStatsCountry(scan,container);
 		
 
+		presentWindow();
+	}
+
+	private static void presentWindow() {
+		VentanaOperaciones myWindow = new VentanaOperaciones();
+		myWindow.setVisible(true);
+		
 	}
 
 	private static void readSaveStatsCountry(Scanner scan, Container container) throws FileNotFoundException {
 		
+		List<StatsCountry> StatsCountryList = container.getStatsCountryList(); 
 		scan = new Scanner(new File("stats-country.txt"));
 		
 		String country;
@@ -49,7 +60,7 @@ public class App {
 			
 			String strPeopleBefore = "";
 			
-			for (int i = 1;parts[i]!="000";i++) {
+			for (int i = 1;i<4;i++) {
 				strPeopleBefore += parts[i].strip();
 				pos++;
 			}
@@ -58,13 +69,30 @@ public class App {
 			
 			String strPeopleAfter = "";
 			
-			for (int i = pos;parts[pos] != "000";i++) {
+			for (int i = pos;i<7;i++) {
 				strPeopleAfter += parts[pos].strip();
 				pos++;
 			}
 			System.out.println(strPeopleAfter);
 			peopleAfter = Integer.parseInt(strPeopleAfter);
 			
+			attacksMade = Integer.parseInt(parts[7].strip());
+			System.out.println("ataque"+ attacksMade);
+			
+			String strAllPeople = "";
+			
+			strAllPeople = parts[8].strip()+parts[9].strip();
+			
+			System.out.println("reclutadas"+ strAllPeople);
+		
+			
+			peopleBefore = Integer.parseInt(strPeopleBefore);
+			peopleAfter = Integer.parseInt(strPeopleAfter);
+			allPeople = Integer.parseInt(strAllPeople);
+			System.out.println(peopleBefore+" ......"+peopleAfter+"........"+allPeople);
+			StatsCountry statsCountry = new StatsCountry(country, peopleBefore, peopleAfter,attacksMade, allPeople);
+
+			StatsCountryList.add(statsCountry);
 		}
 		
 	}
