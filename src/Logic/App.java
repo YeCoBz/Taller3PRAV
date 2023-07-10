@@ -17,7 +17,7 @@ import Dominios.SpecialOperations;
 import Dominios.StatsCountry;
 import Dominios.ThreatAnalyst;
 import Dominios.Users;
-import gui.VentanaOperaciones;
+import GraphicInterface.Login;
 
 public class App {
 
@@ -33,12 +33,13 @@ public class App {
 		readSaveStatsCountry(scan,container);
 		
 
-		presentWindow();
+		presentWindow(container);
 	}
 
-	private static void presentWindow() {
-		VentanaOperaciones myWindow = new VentanaOperaciones();
-		myWindow.setVisible(true);
+	private static void presentWindow(Container container) {
+		
+		Login LoginWindows = new Login(container);
+		LoginWindows.setVisible(true);
 		
 	}
 
@@ -64,7 +65,7 @@ public class App {
 				strPeopleBefore += parts[i].strip();
 				pos++;
 			}
-			System.out.println(strPeopleBefore);
+			//System.out.println(strPeopleBefore);
 			peopleBefore = Integer.parseInt(strPeopleBefore);
 			
 			String strPeopleAfter = "";
@@ -73,23 +74,23 @@ public class App {
 				strPeopleAfter += parts[pos].strip();
 				pos++;
 			}
-			System.out.println(strPeopleAfter);
+			//System.out.println(strPeopleAfter);
 			peopleAfter = Integer.parseInt(strPeopleAfter);
 			
 			attacksMade = Integer.parseInt(parts[7].strip());
-			System.out.println("ataque"+ attacksMade);
+			//System.out.println("ataque"+ attacksMade);
 			
 			String strAllPeople = "";
 			
 			strAllPeople = parts[8].strip()+parts[9].strip();
 			
-			System.out.println("reclutadas"+ strAllPeople);
+			///System.out.println("reclutadas"+ strAllPeople);
 		
 			
 			peopleBefore = Integer.parseInt(strPeopleBefore);
 			peopleAfter = Integer.parseInt(strPeopleAfter);
 			allPeople = Integer.parseInt(strAllPeople);
-			System.out.println(peopleBefore+" ......"+peopleAfter+"........"+allPeople);
+			//System.out.println(peopleBefore+" ......"+peopleAfter+"........"+allPeople);
 			StatsCountry statsCountry = new StatsCountry(country, peopleBefore, peopleAfter,attacksMade, allPeople);
 
 			StatsCountryList.add(statsCountry);

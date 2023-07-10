@@ -7,7 +7,7 @@ import Dominios.Soldiers;
 import Dominios.StatsCountry;
 import Dominios.Users;
 
-public class Container {
+public class Container implements ContainerInterface{
 	
 	List<Users> UserList;
 	List<Programmers> ProgrammersList;
@@ -62,6 +62,26 @@ public class Container {
 
 	public void setStatsCountryList(List<StatsCountry> statsCountryList) {
 		StatsCountryList = statsCountryList;
+	}
+	
+	// Interface adds
+
+	@Override
+	public boolean searchByUserName(String username, String password) {
+		
+		Iterator<Users> it = UserList.iterator();
+		
+		while (it.hasNext()) {
+			
+			Users user = (Users) it.next();
+			
+			if (user.getUserName().equals(username) && user.getPassword().equals(password)) {
+				
+				return true;
+			}
+		}
+		return false;
+		
 	}
 	
 	
