@@ -2,6 +2,12 @@ package Dominios;
 
 public abstract class Soldiers {
 	
+	@Override
+	public String toString() {
+		return "Soldiers [id=" + id + ", name=" + name + ", lastname=" + lastname + ", nickname=" + nickname
+				+ ", specialty=" + specialty + ", courageSouldier=" + courageSouldier + "]";
+	}
+
 	protected String id,name,lastname,nickname,specialty;
 	protected int courageSouldier;
 	

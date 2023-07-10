@@ -180,13 +180,13 @@ public class App {
 			id = parts[0];
 			name = parts[1];
 			lastname = parts[2];
-			specialty = parts[3].toLowerCase();
+			specialty = parts[3].strip().toLowerCase();
 			
 			switch (specialty) {
 			
 			case "ingeniero de ia":
 				String levelExp = parts[4].toLowerCase();
-				int numImpAlgo = Integer.parseInt(parts[5]);
+				int numImpAlgo = Integer.parseInt(parts[5].strip());
 				
 				programmer = new AIEngineer(id,name,lastname,specialty,levelExp,numImpAlgo);
 				container.getProgrammersList().add(programmer);
@@ -194,7 +194,7 @@ public class App {
 			case "analista de amenazas":
 				
 				String abilityIdent = parts[4].toLowerCase();
-				int numThreatsDetected = Integer.parseInt(parts[5]);
+				int numThreatsDetected = Integer.parseInt(parts[5].strip());
 				
 				programmer = new ThreatAnalyst(id,name,lastname,specialty,abilityIdent,numThreatsDetected);
 				container.getProgrammersList().add(programmer);
@@ -203,7 +203,7 @@ public class App {
 				
 				String knowCryptAlg = parts[4];
 				String levelExpSecurity = parts[5];
-				int numSucces = Integer.parseInt(parts[6]);
+				int numSucces = Integer.parseInt(parts[6].strip());
 				String obsSkillLevel = parts[7];
 				
 				programmer = new CryptographyExpert(id,name,lastname,specialty,knowCryptAlg,levelExpSecurity,numSucces,obsSkillLevel);
@@ -257,25 +257,5 @@ public class App {
 		}	
 		
 	}
-	
-	
-	/**
-	 * 	public static void guardarDebilidades(String nombreArchivo,int filas,contenedorDebilidades contenedorDebilidades ) throws IOException {
-		FileWriter escribir;
-		PrintWriter linea;
-		File archivo = new File(nombreArchivo);
-		
-		escribir = new FileWriter(archivo,true);
-		linea = new PrintWriter(escribir);
-		BufferedWriter bw = new BufferedWriter(new FileWriter(archivo));
-		bw.write("");
-		for(int i=0;i<filas;i++) {
-			linea.println(contenedorDebilidades.devolverDebilidad(i)+", "+contenedorDebilidades.getNivelDebilidad(i));
-		}
 
-		linea.close();
-		escribir.close();
-		bw.close();
-	}
-	 */
 }

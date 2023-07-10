@@ -62,6 +62,11 @@ public class CryptographyExpert extends Programmers{
 		}
 		return 0;
 	}
+	@Override
+	public String toString() {
+		return "CryptographyExpert [knowCryptAlg=" + knowCryptAlg + ", levelExpSecurity=" + levelExpSecurity
+				+ ", obsSkillLevel=" + obsSkillLevel + ", numSucces=" + numSucces + ", levelExp=" + levelExp + "]";
+	}
 	
 
 }

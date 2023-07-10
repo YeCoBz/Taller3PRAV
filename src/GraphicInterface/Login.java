@@ -70,12 +70,16 @@ public class Login extends JFrame {
 				
 				if (container.searchByUserName(userName,password)) {
 					
-					dispose();
-					JOptionPane.showMessageDialog(null, userName);
-					Principal p = new Principal();
-					p.setVisible(true);
-					p.setLocationRelativeTo(null);
-					
+					if(container.userAdmin(userName)) {
+						System.out.println("admin");
+					}else {
+						dispose();
+						JOptionPane.showMessageDialog(null, userName);
+						Principal p = new Principal(container);
+						p.setVisible(true);
+						p.setLocationRelativeTo(null);
+					}
+						
 				} else {
 					JOptionPane.showMessageDialog(null, "Usuario no encontrado","ERROR",JOptionPane.INFORMATION_MESSAGE);
 					jpassClave.setText(""); txtUsername.setText("");

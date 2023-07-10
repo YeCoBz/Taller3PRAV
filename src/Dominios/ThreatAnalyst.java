@@ -48,6 +48,11 @@ public class ThreatAnalyst extends Programmers{
 		}
 		return 0;
 	}
+	@Override
+	public String toString() {
+		return "ThreatAnalyst [abilityIdent=" + abilityIdent + ", numThreatsDetected=" + numThreatsDetected
+				+ ", levelExp=" + levelExp + "]";
+	}
 	
 
 }

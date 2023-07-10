@@ -139,5 +139,26 @@ public class Container implements ContainerInterface{
 		escribir.close();
 		bw.close();
 	}
-
+	
+	//User admin or not
+	public boolean userAdmin(String username) {
+		
+		Iterator<Users> it = UserList.iterator();
+		
+		int encontrado = 0;
+		
+		while (it.hasNext()) {
+			
+			Users user = (Users) it.next();
+			
+			if (user.getUserName().equals(username)) {
+				if(user.getTypeUser().toLowerCase().strip().equals("admin")) {
+					encontrado = 1;
+				}
+				
+			}
+		}
+		if (encontrado == 1) return true;
+		else return false;
+	}
 }

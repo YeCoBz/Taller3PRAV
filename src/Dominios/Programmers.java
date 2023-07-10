@@ -42,6 +42,12 @@ public abstract class Programmers {
 	public void setSpecialty(String specialty) {
 		this.specialty = specialty;
 	}
+
+	@Override
+	public String toString() {
+		return "Programmers [idProgrammers=" + idProgrammers + ", name=" + name + ", lastname=" + lastname
+				+ ", specialty=" + specialty + "]";
+	}
 	
 	
 	

@@ -50,5 +50,9 @@ public class AIEngineer extends Programmers{
 		}
 		return 0;
 	}
+	@Override
+	public String toString() {
+		return "AIEngineer [levelExperience=" + levelExperience + ", numAlg=" + numAlg + ", totalExp=" + totalExp + "]";
+	}
 
 }

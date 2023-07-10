@@ -5,6 +5,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Logic.Container;
+
 import javax.swing.JButton;
 
 import java.awt.BorderLayout;
@@ -23,7 +26,7 @@ public class Principal extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Principal() {
+	public Principal(Container container) {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 730, 500);
 		contentPane = new JPanel();
@@ -36,7 +39,9 @@ public class Principal extends JFrame {
 		SoldiersGallery.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
-				Pague1 p1 = new Pague1();
+				Pague1 p1 = new Pague1(container);
+				p1.setList(container);
+				p1.showListSoldier();
 				ShowPanel(p1);
 			}
 		});
@@ -44,6 +49,16 @@ public class Principal extends JFrame {
 		contentPane.add(SoldiersGallery);
 		
 		JButton programmersGallery = new JButton("Ver galeria de programadores");
+		programmersGallery.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				
+				ViewProgrammers p2 = new ViewProgrammers(container);
+				p2.setList(container);
+				p2.showListSchedulers();
+				ShowPanel(p2);
+			}
+		});
+		
 		programmersGallery.setBounds(10, 119, 182, 46);
 		contentPane.add(programmersGallery);
 		
@@ -75,7 +90,7 @@ public class Principal extends JFrame {
 	}
 	
 	private void ShowPanel(JPanel p) {
-		p.setSize(510,461);
+		p.setSize(700,700);
 		p.setLocation(0,0);
 		
 		contentPane.removeAll();
@@ -83,4 +98,6 @@ public class Principal extends JFrame {
 		contentPane.revalidate();
 		contentPane.repaint();
 	}
+	
+	
 }
